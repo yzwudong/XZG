@@ -797,7 +797,7 @@ ThisConfigStruct *findBrdConfig(int searchId = 0)
       int BSL_PIN_MODE = 0;
       if (CCTool.begin(zbConfigs[zbIdx].rstPin, zbConfigs[zbIdx].bslPin, BSL_PIN_MODE))
       {
-        if (CCTool.detectChipInfo())
+        if (CCTool.detectChipInfo() && ethOk==true)
         {
           zbOk = true;
           LOGD("Zigbee config OK: %d", zbIdx);
